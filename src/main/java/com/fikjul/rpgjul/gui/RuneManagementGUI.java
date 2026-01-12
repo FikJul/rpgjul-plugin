@@ -94,10 +94,16 @@ public class RuneManagementGUI extends BaseGUI {
         
         List<String> lore = new ArrayList<>();
         lore.add("§7Level: §f" + currentLevel + "/" + maxLevel);
-        lore.add("§7Current Bonus: §a" + String.format("%.1f", currentBonus) + rune.getDescription().substring(rune.getDescription().lastIndexOf(" ")));
+        
+        // Extract unit from description (e.g., " HP", "%", " HP/5s")
+        String description = rune.getDescription();
+        int lastSpaceIndex = description.lastIndexOf(" ");
+        String unit = lastSpaceIndex >= 0 ? description.substring(lastSpaceIndex) : "";
+        
+        lore.add("§7Current Bonus: §a" + String.format("%.1f", currentBonus) + unit);
         
         if (currentLevel < maxLevel) {
-            lore.add("§7Next Level: §b" + String.format("%.1f", nextBonus) + rune.getDescription().substring(rune.getDescription().lastIndexOf(" ")));
+            lore.add("§7Next Level: §b" + String.format("%.1f", nextBonus) + unit);
         }
         
         lore.add("§7");

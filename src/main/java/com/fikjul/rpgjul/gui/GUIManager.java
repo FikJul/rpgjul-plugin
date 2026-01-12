@@ -3,20 +3,19 @@ package com.fikjul.rpgjul.gui;
 import com.fikjul.rpgjul.RPGJulPlugin;
 import org.bukkit.entity.Player;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Manages all GUI instances and player GUI state
  */
 public class GUIManager {
     private final RPGJulPlugin plugin;
-    private final Map<UUID, BaseGUI> openGUIs;
+    private final ConcurrentHashMap<UUID, BaseGUI> openGUIs;
 
     public GUIManager(RPGJulPlugin plugin) {
         this.plugin = plugin;
-        this.openGUIs = new HashMap<>();
+        this.openGUIs = new ConcurrentHashMap<>();
     }
 
     /**

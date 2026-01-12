@@ -111,7 +111,10 @@ public abstract class BaseGUI {
             if (i < filled) {
                 bar.append("▰");
             } else {
-                bar.append("§7▱");
+                if (i == filled) {
+                    bar.append("§7");
+                }
+                bar.append("▱");
             }
         }
         bar.append(" §f").append((int)(percentage * 100)).append("%");
