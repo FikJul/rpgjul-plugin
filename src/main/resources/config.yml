@@ -1,0 +1,84 @@
+# General Settings
+plugin:
+  language: "en"
+  debug-mode: false
+
+# Level System
+leveling:
+  max-level: 100
+  xp-formula: "exponential"  # linear or exponential
+  xp-base: 100
+  xp-multiplier: 1.5
+
+# XP Rates per Mob Type
+xp-rates:
+  zombie: 10
+  skeleton: 12
+  creeper: 15
+  spider: 8
+  cave_spider: 10
+  enderman: 25
+  blaze: 20
+  wither_skeleton: 30
+  piglin: 15
+  zombified_piglin: 15
+  hoglin: 18
+  magma_cube: 12
+  slime: 8
+  phantom: 15
+  drowned: 12
+  husk: 10
+  stray: 12
+  witch: 20
+  vindicator: 18
+  evoker: 25
+  pillager: 15
+  ravager: 30
+  guardian: 20
+  # Boss mobs
+  ender_dragon: 5000
+  wither: 3000
+  warden: 2500
+  elder_guardian: 1000
+  boss-multiplier: 5.0
+
+# Rune System
+runes:
+  max-level: 100
+  reset-cooldown-days: 7
+  points-per-level: 1
+
+# Mob Leveling
+mob-leveling:
+  enabled: true
+  min-level: 1
+  max-level: 100
+  health-per-level: 2.0
+  damage-per-level: 0.5
+  xp-multiplier-per-level: 0.015
+  boss-always-max-level: true
+  show-name-tags: true
+
+# Party System
+party:
+  enabled: true
+  max-members: 5
+  invitation-expire-seconds: 60
+  shared-xp:
+    enabled: true
+    share-radius: 20
+  party-buff:
+    enabled: true
+    min-members: 3
+    damage-bonus-percent: 10
+
+# GUI Settings
+gui:
+  sounds-enabled: true
+  particles-enabled: true
+  auto-refresh-leaderboard: 60
+
+# Database
+database:
+  type: "sqlite"
+  auto-save-interval: 300  # seconds
