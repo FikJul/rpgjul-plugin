@@ -190,12 +190,13 @@ public class RPGAdminCommand implements CommandExecutor, TabCompleter {
             return;
         }
 
-        // Create new player data
-        PlayerData newData = new PlayerData(target.getUniqueId(), target.getName());
-        plugin.getPlayerDataManager().getPlayerData(target.getUniqueId()).setTotalLevel(1);
-        plugin.getPlayerDataManager().getPlayerData(target.getUniqueId()).setCurrentXP(0);
-        plugin.getPlayerDataManager().getPlayerData(target.getUniqueId()).setAvailableRunePoints(0);
-        plugin.getPlayerDataManager().getPlayerData(target.getUniqueId()).setActiveClass(null);
+        // Reset all player data
+        data.setTotalLevel(1);
+        data.setCurrentXP(0);
+        data.setXpToNextLevel(100);
+        data.setAvailableRunePoints(0);
+        data.setActiveClass(null);
+        data.setLastRuneReset(0);
         
         for (RuneType rune : RuneType.values()) {
             data.setRuneLevel(rune, 0);

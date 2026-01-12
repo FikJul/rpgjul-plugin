@@ -154,10 +154,13 @@ public class PartyManager {
             return false;
         }
 
+        // Check if leader before removing from party
+        boolean wasLeader = party.isLeader(player.getUniqueId());
+        
         party.removeMember(player.getUniqueId());
 
         // If leader left, promote new leader or disband
-        if (party.isLeader(player.getUniqueId())) {
+        if (wasLeader) {
             if (party.getSize() > 1) {
                 party.promoteNewLeader();
                 databaseManager.saveParty(party);

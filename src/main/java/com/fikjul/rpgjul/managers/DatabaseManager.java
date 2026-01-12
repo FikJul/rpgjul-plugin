@@ -33,7 +33,6 @@ public class DatabaseManager {
                 plugin.getDataFolder().mkdirs();
             }
 
-            Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:" + databaseFile.getAbsolutePath());
             
             createTables();

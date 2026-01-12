@@ -115,12 +115,12 @@ public class EntityDamageListener implements Listener {
         // Sharpshooter double arrow
         double doubleArrowChance = plugin.getClassManager().getDoubleArrowChance(shooter);
         if (doubleArrowChance > 0 && random.nextDouble() < doubleArrowChance) {
-            // Spawn second arrow
+            // Spawn second arrow with slight spread
             Arrow secondArrow = shooter.getWorld().spawnArrow(
                     arrow.getLocation(), 
                     arrow.getVelocity(), 
                     (float) arrow.getVelocity().length(), 
-                    0);
+                    1.0f); // Small spread for realistic dispersion
             secondArrow.setShooter(shooter);
             secondArrow.setDamage(damage);
         }
