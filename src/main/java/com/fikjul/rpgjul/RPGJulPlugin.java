@@ -1,6 +1,7 @@
 package com.fikjul.rpgjul;
 
 import com.fikjul.rpgjul.commands.*;
+import com.fikjul.rpgjul.gui.GUIManager;
 import com.fikjul.rpgjul.listeners.*;
 import com.fikjul.rpgjul.managers.*;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -18,6 +19,7 @@ public class RPGJulPlugin extends JavaPlugin {
     private ClassManager classManager;
     private MobManager mobManager;
     private PartyManager partyManager;
+    private GUIManager guiManager;
 
     @Override
     public void onEnable() {
@@ -68,6 +70,7 @@ public class RPGJulPlugin extends JavaPlugin {
         classManager = new ClassManager(this, playerDataManager);
         mobManager = new MobManager(this);
         partyManager = new PartyManager(this, databaseManager);
+        guiManager = new GUIManager(this);
     }
 
     /**
@@ -95,6 +98,7 @@ public class RPGJulPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MobSpawnListener(this), this);
         getServer().getPluginManager().registerEvents(new EntityDamageListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerRegenerationListener(this), this);
+        getServer().getPluginManager().registerEvents(new InventoryClickListener(this), this);
     }
 
     // Getters for managers
@@ -124,5 +128,9 @@ public class RPGJulPlugin extends JavaPlugin {
 
     public PartyManager getPartyManager() {
         return partyManager;
+    }
+
+    public GUIManager getGUIManager() {
+        return guiManager;
     }
 }

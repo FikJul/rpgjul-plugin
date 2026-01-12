@@ -38,24 +38,23 @@ public class RPGCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length == 0) {
-            // TODO: Open main GUI
-            player.sendMessage(ChatColor.YELLOW + "RPG System - Coming soon: Main GUI");
-            sendStatsMessage(player);
+            // Open main GUI
+            plugin.getGUIManager().openMainMenu(player);
             return true;
         }
 
         switch (args[0].toLowerCase()) {
             case "stats":
-                sendStatsMessage(player);
+                plugin.getGUIManager().openStatsGUI(player);
                 break;
             case "runes":
-                player.sendMessage(ChatColor.YELLOW + "Rune Management GUI - Coming soon");
+                plugin.getGUIManager().openRuneGUI(player);
                 break;
             case "class":
-                player.sendMessage(ChatColor.YELLOW + "Class Showcase GUI - Coming soon");
+                plugin.getGUIManager().openClassGUI(player);
                 break;
             case "leaderboard":
-                player.sendMessage(ChatColor.YELLOW + "Leaderboard GUI - Coming soon");
+                plugin.getGUIManager().openLeaderboardGUI(player);
                 break;
             default:
                 player.sendMessage(ChatColor.RED + "Unknown subcommand. Use: /rpg [stats|runes|class|leaderboard]");
