@@ -67,7 +67,7 @@ public class PartyGUI extends BaseGUI {
         inventory.setItem(4, createItem(Material.PURPLE_BANNER, "§a§lYour Party", infoLore));
 
         // Display members (Slots 19-23)
-        List<UUID> members = party.getMembers();
+        List<UUID> members = new ArrayList<>(party.getMembers());
         for (int i = 0; i < Math.min(5, members.size()); i++) {
             UUID memberId = members.get(i);
             addMemberItem(19 + i, memberId, party, isLeader);
@@ -164,7 +164,7 @@ public class PartyGUI extends BaseGUI {
         // Handle member kick (Slots 19-23)
         if (slot >= 19 && slot <= 23 && party != null && party.isLeader(player.getUniqueId())) {
             int memberIndex = slot - 19;
-            List<UUID> members = party.getMembers();
+            List<UUID> members = new ArrayList<>(party.getMembers());
             
             if (memberIndex < members.size()) {
                 UUID targetId = members.get(memberIndex);

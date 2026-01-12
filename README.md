@@ -33,6 +33,55 @@ A comprehensive RPG plugin for Minecraft servers with levels, runes, classes, mo
 7. **Artisan** - Architect Lv.80 + Angler Lv.20 → +25% Gathering Speed
 8. **Ranger** - Marksman Lv.40 + Angler Lv.30 + Swiftwind Lv.30 → +20% Ranged Damage
 
+## GUI System
+
+The plugin features a complete interactive GUI system accessible through inventory menus:
+
+### Main Menu (`/rpg`)
+- Central hub showing player level, XP, rune points, and active class
+- Quick navigation to all other GUIs
+- Player head display with detailed stats
+
+### Stats Display (`/rpg stats`)
+- Comprehensive view of all stat bonuses
+- Shows rune bonuses, class bonuses, and totals
+- Categories: Health, Combat (Sword/Axe/Bow), Defense, Mobility, Skills
+- Real-time calculation from all sources
+
+### Rune Management (`/rpg runes`)
+- Interactive rune allocation with visual progress bars
+- Click to upgrade (1 point) or Shift-Click for bulk allocation
+- Color-coded runes based on level (red → yellow → green → gold)
+- Reset functionality with cooldown protection
+- Confirmation dialog for resets
+
+### Class Showcase (`/rpg class`)
+- View all 8 classes with locked/unlocked status
+- Shows requirements and progress for locked classes
+- Click to activate unlocked classes
+- Displays current active class with deactivation option
+- Glowing items for unlocked/active classes
+
+### Leaderboard (`/rpg leaderboard`)
+- Top 10 players display
+- Multiple categories: Total Level, Vitality, Bladestorm, Warbringer, Marksman, Swiftwind, Aegis
+- Medals for top 3 (🥇🥈🥉)
+- Shows your rank if not in top 10
+- Refresh functionality
+
+### Party GUI (`/party info`)
+- View all party members with online status
+- Leader actions: invite players, kick members, disband party
+- Member actions: leave party
+- Displays party info: leader, size, buff status
+- Click member heads to kick (leader only)
+
+All GUIs feature:
+- Sound effects (configurable)
+- Particle effects for special actions (configurable)
+- Smooth navigation between menus
+- Back/Close buttons
+
 ## Commands
 
 ### Player Commands
@@ -132,15 +181,15 @@ The plugin uses SQLite to store:
 - Code review fixes applied
 - Security scan passed (0 vulnerabilities)
 
-🚧 **TODO (GUI System):**
-- Main Menu GUI
-- Stats Display GUI
-- Rune Management GUI
-- Class Showcase GUI
-- Leaderboard GUI
-- Party GUI
-
-Note: GUI implementation requires interactive inventory menus which are planned for future updates.
+✅ **GUI System (Completed):**
+- Main Menu GUI - Central hub with player info and navigation
+- Stats Display GUI - Detailed stats showing rune and class bonuses
+- Rune Management GUI - Interactive rune allocation with progress bars
+- Class Showcase GUI - View and activate classes with requirements
+- Leaderboard GUI - Top 10 players with multiple categories
+- Party GUI - Party management with member display and actions
+- GUI Manager - Centralized GUI state management
+- Inventory Click Listener - Handle all GUI interactions
 
 ## Technical Details
 
