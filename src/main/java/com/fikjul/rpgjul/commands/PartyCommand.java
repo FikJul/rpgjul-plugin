@@ -72,7 +72,7 @@ public class PartyCommand implements CommandExecutor, TabCompleter {
                 handleDisband(player);
                 break;
             case "info":
-                handleInfo(player);
+                plugin.getGUIManager().openPartyGUI(player);
                 break;
             default:
                 player.sendMessage(ChatColor.RED + "Unknown subcommand. Use: /party <create|invite|accept|leave|kick|disband|info>");
