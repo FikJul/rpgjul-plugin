@@ -69,16 +69,23 @@ A comprehensive RPG plugin for Minecraft servers with levels, runes, classes, mo
 **Requirements:**
 - Java 17 or higher
 - Maven 3.6+
-- Access to Paper/Spigot repository
+- Internet connection for Maven dependencies (Paper API and SQLite JDBC)
 
 **Build Command:**
 ```bash
 mvn clean package
 ```
 
-The compiled JAR will be in the `target/` directory.
+The compiled JAR will be in the `target/` directory as `RPGJulPlugin-1.0.0.jar`.
 
-**Note:** This plugin requires a Minecraft server running Paper or Spigot 1.19+ to function properly.
+**Note:** This plugin requires:
+- A Minecraft server running Paper or Spigot 1.19+ to function properly
+- Internet access during the build process to download dependencies from Maven repositories
+
+**Troubleshooting Build Issues:**
+- If build fails with "Could not transfer artifact", ensure you have internet connectivity
+- The Paper repository (https://repo.papermc.io) must be accessible
+- Maven Central must be accessible for the SQLite JDBC driver
 
 ## Installation
 
@@ -108,7 +115,7 @@ The plugin uses SQLite to store:
 
 ## Implementation Status
 
-✅ **Completed:**
+✅ **Completed & Tested:**
 - Project structure and Maven configuration
 - All data models (PlayerData, Party, PartyInvitation)
 - All enum definitions (RuneType, RPGClass)
@@ -122,6 +129,8 @@ The plugin uses SQLite to store:
 - All event listeners (join, quit, death, spawn, damage, regen)
 - All commands (RPG, Party, Party Chat, Admin)
 - Configuration files (plugin.yml, config.yml)
+- Code review fixes applied
+- Security scan passed (0 vulnerabilities)
 
 🚧 **TODO (GUI System):**
 - Main Menu GUI
