@@ -1,0 +1,38 @@
+name: RPGJulPlugin
+version: ${project.version}
+main: com.fikjul.rpgjul.RPGJulPlugin
+api-version: 1.19
+author: FikJul
+description: Complete RPG system with levels, runes, classes, mob leveling, and parties
+
+commands:
+  rpg:
+    description: Open RPG main menu
+    usage: /rpg [stats|runes|class|leaderboard]
+    permission: rpgjul.use
+  party:
+    description: Party management commands
+    usage: /party <create|invite|accept|leave|kick|disband|info>
+    permission: rpgjul.party
+  p:
+    description: Send message to party chat
+    usage: /p <message>
+    permission: rpgjul.party.chat
+  rpgadmin:
+    description: Admin commands for RPG system
+    usage: /rpgadmin <subcommand>
+    permission: rpgjul.admin
+
+permissions:
+  rpgjul.use:
+    description: Access to RPG system
+    default: true
+  rpgjul.party:
+    description: Access to party system
+    default: true
+  rpgjul.party.chat:
+    description: Access to party chat
+    default: true
+  rpgjul.admin:
+    description: Admin access to RPG system
+    default: op
